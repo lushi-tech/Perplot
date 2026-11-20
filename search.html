@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang = "sq">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kërkimi | Përplot</title>
+
+    <link rel="stylesheet" href="index.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <section id="header">
+
+        <a href="Index.html">
+            <img src="images/prove/logo.jpg" class="logo" alt="Përplot">
+        </a>
+
+        <form id="search-form" action="search.html" method="GET">
+            <input
+                type="search"
+                id="search-input"
+                name="q"
+                placeholder="Kërko lodra, produkte..."
+            >
+
+            <button type="submit" aria-label="Kërko">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+
+        <div>
+            <ul id="nevbar">
+                <li><a href="Index.html">Përplot</a></li>
+                <li><a href="shop.html">Kategoritë</a></li>
+                <li><a href="about.html">Rreth nesh</a></li>
+                <li><a href="contact.html">Kontakti</a></li>
+                <li><a href="cart.html"> <i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section id="search-results">
+        <h2>Rezultatet e kërkimit</h2>
+
+        <p id="search-message">
+            Kërko produktin që dëshiron.
+        </p>
+
+        <div id="results-container"></div>
+    </section>
+
+
+
+<script src="search.js"></script>
+
+
+</body>
+
+
+</html>
