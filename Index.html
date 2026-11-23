@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sq">
 
 <head>
@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/products.css">
 </head>
 
 
@@ -82,23 +83,25 @@
 </section>
 
 
-    <section id="feature" class="section-p1">
-        <div class="fe-box">
-            <img src="images/prove/feature1.jpg" alt="">
-            <h6>Free Shipping</h6>
+    <section id="deals" class="section-p1">
+
+        <div class="deals-head">
+            <div>
+                <h2>Ofertat e javës</h2>
+                <p>Lodra dhe produkte të zgjedhura me çmim të reduktuar. Sasia është e kufizuar.</p>
+            </div>
+            <a href="shop.html" class="deals-link">Shiko të gjitha kategoritë</a>
         </div>
-        <div class="fe-box">
-            <img src="images/prove/feature1.jpg" alt="">
-            <h6>Free Shipping</h6>
+
+        <!-- Kartat gjenerohen nga products.js -->
+        <div class="product-carousel">
+            <button type="button" class="carousel-arrow prev" aria-label="Produktet e mëparshme">&#10094;</button>
+
+            <div id="product-grid" class="product-grid"></div>
+
+            <button type="button" class="carousel-arrow next" aria-label="Produktet e radhës">&#10095;</button>
         </div>
-        <div class="fe-box">
-            <img src="images/prove/feature1.jpg" alt="">
-            <h6>Free Shipping</h6>
-        </div>
-        <div class="fe-box">
-            <img src="images/prove/feature1.jpg" alt="">
-            <h6>Free Shipping</h6>
-        </div>
+
     </section>
 
 
@@ -107,8 +110,9 @@
 
     <script src="script.js"></script>
     <script src="load-layout.js"></script>
+    <script src="products.js"></script>
 
 </body>
 
 
-</html>  
+</html>

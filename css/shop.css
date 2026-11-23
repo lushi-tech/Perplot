@@ -1,0 +1,171 @@
+/* ==================================
+   NGJYRAT - ndryshoji sipas index.css
+   ================================== */
+:root {
+    --shop-primary: #68232F;        /* bordo: butona, titujt, ikonat */
+    --shop-primary-dark: #8d3545;   /* hover i butonit (si shigjetat) */
+    --shop-primary-soft: #f5e9eb;   /* sfondi i ikonave */
+    --shop-border: #e5d5d8;         /* kornizat (si te rezultatet e kërkimit) */
+    --shop-text-muted: #465b52;     /* teksti dytësor (si p te index.css) */
+    --shop-accent: #da7d3f;         /* portokalli i footer-it */
+}
+
+/* ==================================
+   SHOP / KATEGORITË
+   ================================== */
+
+#categories-page {
+    min-height: 60vh;
+}
+
+/* ---------- Titulli + kërkimi ---------- */
+#categories-hero {
+    text-align: center;
+    padding: 50px 20px 20px;
+}
+
+#categories-hero h1 {
+    font-size: 38px;
+    line-height: 1.3;
+    color: var(--shop-primary);
+    margin-bottom: 8px;
+}
+
+#categories-hero p {
+    color: var(--shop-text-muted);
+    margin-bottom: 26px;
+}
+
+#category-search-form {
+    display: flex;
+    align-items: center;
+    max-width: 560px;
+    margin: 0 auto;
+    background: #fff;
+    border: 2px solid var(--shop-border);
+    border-radius: 50px;
+    overflow: hidden;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+#category-search-form:focus-within {
+    border-color: var(--shop-primary);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--shop-primary) 15%, transparent);
+}
+
+#category-search-input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 14px 22px;
+    font-size: 16px;
+    background: transparent;
+}
+
+#category-search-form button {
+    border: none;
+    background: var(--shop-primary);
+    color: #fff;
+    padding: 14px 26px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background .2s;
+}
+
+#category-search-form button:hover {
+    background: var(--shop-primary-dark);
+}
+
+/* ---------- Grid i kategorive ---------- */
+#category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px 70px;
+}
+
+.category-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding: 36px 20px;
+    background: #fff;
+    border: 1px solid var(--shop-border);
+    border-radius: 18px;
+    color: inherit;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+
+.category-card:hover .category-icon,
+.category-card:focus-visible .category-icon {
+    background: var(--shop-primary);
+    color: #fff;
+}
+
+.category-card:hover,
+.category-card:focus-visible {
+    transform: translateY(-5px);
+    border-color: var(--shop-primary);
+    box-shadow: 0 12px 28px color-mix(in srgb, var(--shop-primary) 15%, transparent);
+    outline: none;
+}
+
+.category-icon {
+    transition: background .2s, color .2s;
+    display: grid;
+    place-items: center;
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+    background: var(--shop-primary-soft);
+    color: var(--shop-primary);
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+.category-card h3 {
+    font-size: 20px;
+    color: var(--shop-primary);
+}
+
+.category-card p {
+    font-size: 14px;
+    color: var(--shop-text-muted);
+}
+
+#no-category {
+    text-align: center;
+    padding: 0 20px 60px;
+    color: var(--shop-text-muted);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 799px) {
+    #category-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 477px) {
+    #categories-hero h1 {
+        font-size: 30px;
+    }
+
+    #category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .category-card,
+    #category-search-form,
+    #category-search-form button {
+        transition: none;
+    }
+}

@@ -1,0 +1,355 @@
+/* ==================================
+   OFERTAT - PRODUKTET ME ULJE
+   ================================== */
+
+:root {
+    --deal-primary: #68232F;
+    --deal-primary-dark: #8d3545;
+    --deal-soft: #f5e9eb;
+    --deal-border: #e5d5d8;
+    --deal-accent: #da7d3f;
+    --deal-text: #465b52;
+}
+
+#deals {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* ---------- Titulli i seksionit ---------- */
+.deals-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.deals-head h2 {
+    font-size: 34px;
+    line-height: 1.3;
+    color: var(--deal-primary);
+}
+
+.deals-head p {
+    margin-top: 6px;
+    color: var(--deal-text);
+}
+
+.deals-link {
+    color: var(--deal-primary);
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: none;
+    border-bottom: 2px solid var(--deal-accent);
+    padding-bottom: 3px;
+    transition: color .2s;
+}
+
+.deals-link:hover {
+    color: var(--deal-accent);
+}
+
+/* ---------- Karuseli (një rresht me shigjeta) ---------- */
+.product-carousel {
+    --per-view: 3;
+    --gap: 24px;
+    position: relative;
+}
+
+.product-grid {
+    display: flex;
+    gap: var(--gap);
+    overflow-x: auto;
+    padding: 8px 0 20px;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.product-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.product-grid .product-card {
+    flex: 0 0 calc((100% - (var(--per-view) - 1) * var(--gap)) / var(--per-view));
+    scroll-snap-align: start;
+}
+
+.carousel-arrow {
+    position: absolute;
+    top: 38%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: var(--deal-primary);
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+    transition: background .2s, opacity .2s;
+}
+
+.carousel-arrow:hover {
+    background: var(--deal-primary-dark);
+}
+
+.carousel-arrow:focus-visible {
+    outline: 3px solid var(--deal-accent);
+    outline-offset: 2px;
+}
+
+.carousel-arrow.prev {
+    left: -21px;
+}
+
+.carousel-arrow.next {
+    right: -21px;
+}
+
+.carousel-arrow:disabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* ---------- Karta e produktit ---------- */
+.product-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid var(--deal-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow .2s, transform .2s;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 26px rgba(88, 21, 47, .12);
+    transform: translateY(-3px);
+}
+
+.product-media {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    background: var(--deal-soft);
+}
+
+.product-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: var(--deal-accent);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 14px 16px 16px;
+}
+
+.product-category {
+    font-size: 11px;
+    color: var(--deal-text);
+    margin: 0 0 2px;
+}
+
+.product-name {
+    font-size: 16px;
+    line-height: 1.3;
+    color: #222;
+    min-height: 42px;
+}
+
+/* ---------- Çmimi ---------- */
+.product-price {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 6px 0 2px;
+}
+
+.price-new {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--deal-primary);
+}
+
+.price-old {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.product-stock {
+    font-size: 12px;
+    color: var(--deal-text);
+    margin: 0 0 10px;
+}
+
+.product-stock.low {
+    color: var(--deal-accent);
+    font-weight: 600;
+}
+
+/* ---------- Sasia + butoni ---------- */
+.product-actions {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.qty-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--deal-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.qty-control button {
+    width: 32px;
+    height: 34px;
+    border: none;
+    background: var(--deal-soft);
+    color: var(--deal-primary);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+.qty-control button:hover {
+    background: var(--deal-border);
+}
+
+.qty-value {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+    font-size: 13px;
+    color: #222;
+}
+
+.add-to-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--deal-primary);
+    border-radius: 10px;
+    background: var(--deal-primary);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.add-to-cart:hover {
+    background: transparent;
+    color: var(--deal-primary);
+}
+
+.product-card button:focus-visible {
+    outline: 3px solid var(--deal-accent);
+    outline-offset: 2px;
+}
+
+/* ---------- Njoftimi pas shtimit ---------- */
+.cart-toast {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    max-width: 320px;
+    background: var(--deal-primary);
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity .25s, transform .25s;
+}
+
+.cart-toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    .product-carousel {
+        --per-view: 2;
+        --gap: 16px;
+    }
+}
+
+@media (max-width: 600px) {
+    .product-carousel {
+        --per-view: 2;
+        --gap: 10px;
+    }
+
+    .carousel-arrow {
+        width: 34px;
+        height: 34px;
+        font-size: 15px;
+    }
+
+    .carousel-arrow.prev {
+        left: -8px;
+    }
+
+    .carousel-arrow.next {
+        right: -8px;
+    }
+
+    .deals-head h2 {
+        font-size: 26px;
+    }
+
+    .product-info {
+        padding: 8px 10px 10px;
+    }
+
+    .product-name {
+        font-size: 13px;
+        min-height: 34px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .product-card,
+    .cart-toast,
+    .carousel-arrow {
+        transition: none;
+    }
+
+    .product-grid {
+        scroll-behavior: auto;
+    }
+}
