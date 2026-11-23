@@ -37,6 +37,41 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             console.log("U ngarkua me sukses:", component.file);
 
+            // ==================================
+            // ACTIVE NAVBAR AFTER HEADER LOAD
+            // ==================================
+
+            if (component.selector === "#header-placeholder") {
+
+                const currentPage = window.location.pathname
+                    .split("/")
+                    .pop()
+                    .toLowerCase();
+
+                const activePage = currentPage === ""
+                    ? "index.html"
+                    : currentPage;
+
+                const navLinks = element.querySelectorAll("#nevbar a[href]");
+
+                navLinks.forEach(link => {
+
+                    const linkPage = link.getAttribute("href")
+                        .split("/")
+                        .pop()
+                        .toLowerCase();
+
+                    if (linkPage === activePage) {
+                        link.classList.add("active");
+                    } else {
+                        link.classList.remove("active");
+                    }
+
+                });
+
+                console.log("Navbar aktivizuar për:", activePage);
+            }
+
         } catch (error) {
 
             console.error("Gabim gjatë ngarkimit:", error);

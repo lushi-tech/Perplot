@@ -191,6 +191,8 @@ body{
 
 
 
+
+
   
 
 /*Home page*/
@@ -706,6 +708,262 @@ body{
     .footer-bottom p {
         font-size: 15px;
         line-height: 1.0;
+    }
+
+}
+
+
+
+/* ==========================================
+   PERPLOT - RESPONSIVE DESIGN
+   ========================================== */
+
+
+/* ==========================================
+   1. GENERAL RESPONSIVE SETTINGS
+   ========================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    max-width: 100%;
+}
+
+
+/* ==========================================
+   2. TABLETS - MAX WIDTH 1024px
+   ========================================== */
+
+@media screen and (max-width: 1024px) {
+
+    /* Header */
+
+    #header {
+        padding: 15px 30px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    #header .logo {
+        max-width: 130px;
+    }
+
+    #nevbar li {
+        padding: 0 10px;
+    }
+
+    #nevbar li a {
+        font-size: 14px;
+    }
+
+    /* General sections */
+
+    .section-p1 {
+        padding: 40px 30px;
+    }
+
+    /* Product cards */
+
+    .pro-container {
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .pro {
+        flex: 1 1 220px;
+        max-width: 300px;
+    }
+
+}
+
+
+/* ==========================================
+   3. SMARTPHONES - MAX WIDTH 767px
+   ========================================== */
+
+@media screen and (max-width: 767px) {
+
+    /* Header */
+
+    #header {
+        padding: 15px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    #header .logo {
+        width: 120px;
+    }
+
+    /* Search bar */
+
+    #search-form {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    #search-input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* Navigation */
+
+    #nevbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 0;
+    }
+
+    #nevbar li {
+        padding: 5px;
+    }
+
+    #nevbar li a {
+        font-size: 13px;
+    }
+
+    /* General sections */
+
+    .section-p1 {
+        padding: 30px 15px;
+    }
+
+    /* Headings */
+
+    h1 {
+        font-size: clamp(26px, 7vw, 38px);
+    }
+
+    h2 {
+        font-size: clamp(22px, 6vw, 30px);
+    }
+
+    h3 {
+        font-size: clamp(18px, 5vw, 24px);
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    /* Product grid */
+
+    .pro-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .pro {
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .pro img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    /* Product information */
+
+    .pro .des {
+        padding: 8px 5px;
+    }
+
+    .pro .des h5 {
+        font-size: 13px;
+    }
+
+    /* Footer */
+
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+
+    footer .col {
+        width: 45%;
+        min-width: 140px;
+    }
+
+}
+
+
+/* ==========================================
+   4. SMALL SMARTPHONES - MAX WIDTH 480px
+   ========================================== */
+
+@media screen and (max-width: 480px) {
+
+    #header {
+        padding: 12px 12px;
+    }
+
+    #header .logo {
+        width: 105px;
+    }
+
+    #nevbar {
+        gap: 8px;
+    }
+
+    #nevbar li {
+        padding: 3px;
+    }
+
+    #nevbar li a {
+        font-size: 12px;
+    }
+
+    .section-p1 {
+        padding: 25px 12px;
+    }
+
+    /* Product grid */
+
+    .pro-container {
+        gap: 8px;
+    }
+
+    .pro .des h5 {
+        font-size: 12px;
+    }
+
+    .pro .des h4 {
+        font-size: 14px;
+    }
+
+    /* Footer */
+
+    footer .col {
+        width: 100%;
     }
 
 }

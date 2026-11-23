@@ -1,84 +1,138 @@
 
-const track = document.querySelector(".hero-track");
-const slides = document.querySelectorAll(".hero-slide");
+document.addEventListener("DOMContentLoaded", function () {
 
-const next = document.querySelector(".slider-arrow.next");
-const prev = document.querySelector(".slider-arrow.prev");
+    // ==========================================
+    // 1. HERO SLIDER
+    // ==========================================
 
-let currentIndex = 0;
-let sliderInterval;
+    const track = document.querySelector(".hero-track");
+    const slides = document.querySelectorAll(".hero-slide");
 
-function showSlide(index) {
+    const next = document.querySelector(".slider-arrow.next");
+    const prev = document.querySelector(".slider-arrow.prev");
 
-    if (index >= slides.length) {
-        currentIndex = 0;
-    } else if (index < 0) {
-        currentIndex = slides.length - 1;
-    } else {
-        currentIndex = index;
+    let currentIndex = 0;
+    let sliderInterval;
+
+    function showSlide(index) {
+
+        if (!track || slides.length === 0) return;
+
+        if (index >= slides.length) {
+            currentIndex = 0;
+        } else if (index < 0) {
+            currentIndex = slides.length - 1;
+        } else {
+            currentIndex = index;
+        }
+
+        track.style.transform =
+            `translateX(-${currentIndex * 100}%)`;
     }
 
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-}
-
-function nextSlide() {
-    showSlide(currentIndex + 1);
-}
-
-function prevSlide() {
-    showSlide(currentIndex - 1);
-}
-
-function startSlider() {
-    sliderInterval = setInterval(nextSlide, 5000);
-}
-
-function resetSlider() {
-    clearInterval(sliderInterval);
-    startSlider();
-}
-
-next.addEventListener("click", () => {
-    nextSlide();
-    resetSlider();
-});
-
-prev.addEventListener("click", () => {
-    prevSlide();
-    resetSlider();
-});
-
-startSlider();
-
-
-if (searchForm && searchInput) {
-    searchForm.addEventListener("submit", function(event){
-        const searchValue = searchInput.value.trim();
-
-        if(searchValue === ""){
-            event.preventDefault();
-            searchInput.focus();
-            return;
-        }
-    });
-}
-
-const params= new URLSearchParams(window.location.search);
-const searchQuery = params.get("q");
-
-const productCards = document.querySelectorAll("pro");
-if(searchQuery){
-    if(serachInput){
-        searchInput.value = searchQuery;
+    function nextSlide() {
+        showSlide(currentIndex + 1);
     }
 
-    const query = searchQuery.toLowerCase();
-    productCards.forEach(product =>{
-        const productName = product.textContent.toLowerCase();
-        if(productName.includes(query)){
-            product.style.display = "";
-        }else{
-            product.style.display = "none";
+    function prevSlide() {
+        showSlide(currentIndex - 1);
+    }
+
+    function startSlider() {
+        if (slides.length <= 1) return;
+
+        clearInterval(sliderInterval);
+        sliderInterval = setInterval(nextSlide, 5000);
+    }
+
+    function resetSlider() {
+        clearInterval(sliderInterval);
+        startSlider();
+    }
+
+    // Kontrollojmë nëse shigjetat ekzistojnë
+    if (track && slides.length > 0) {
+
+        showSlide(0);
+        startSlider();
+
+        if (next) {
+            next.addEventListener("click", function () {
+                nextSlide();
+                resetSlider();
+            });
         }
-    });
-}
+
+        if (prev) {
+            prev.addEventListener("click", function () {
+                prevSlide();
+                resetSlider();
+            });
+        }
+    }
+
+
+    // ==========================================
+    // 2. SEARCH FORM
+    // ==========================================
+
+    const searchForm = document.querySelector("#search-form");
+    const searchInput = document.querySelector("#search-input");
+
+    if (searchForm && searchInput) {
+
+        searchForm.addEventListener("submit", function (event) {
+
+            const searchValue = searchInput.value.trim();
+
+            if (searchValue === "") {
+                event.preventDefault();
+                searchInput.focus();
+            }
+
+        });
+    }
+
+
+    // ==========================================
+    // 3. SEARCH PRODUCTS
+    // ==========================================
+
+    const params = new URLSearchParams(window.location.search);
+    const searchQuery = params.get("q");
+
+    const productCards = document.querySelectorAll(".pro, .product-card");
+
+    if (searchQuery && productCards.length > 0) {
+
+        if (searchInput) {
+            searchInput.value = searchQuery;
+        }
+
+        const query = searchQuery.toLowerCase();
+
+        productCards.forEach(function (product) {
+
+            const productName = product.textContent.toLowerCase();
+
+            if (productName.includes(query)) {
+                product.style.display = "";
+            } else {
+                product.style.display = "none";
+            }
+
+        });
+    }
+
+
+
+
+console.log("SCRIPT.JS U NGARKUA");
+
+console.log("FAQJA AKTUALE:", window.location.pathname);
+
+console.log("NAVBAR:", document.querySelector("#nevbar"));
+
+console.log("LINKET:", document.querySelectorAll("#nevbar a").length);
+
+});
