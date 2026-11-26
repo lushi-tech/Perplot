@@ -1,0 +1,357 @@
+/* ==================================
+   KONTAKTI
+   ================================== */
+
+:root {
+    --c-primary: #68232F;
+    --c-primary-dark: #58152F;
+    --c-primary-hover: #8d3545;
+    --c-soft: #f5e9eb;
+    --c-border: #e5d5d8;
+    --c-accent: #da7d3f;
+    --c-text: #465b52;
+    --c-error: #b3261e;
+    --c-success: #1f7a4d;
+}
+
+#contact-page {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 40px 10px;
+}
+
+.contact-wrap {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    background: #fff;
+    border: 1px solid var(--c-border);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 14px 40px rgba(88, 21, 47, .10);
+}
+
+/* ---------- Pjesa majtas (ilustrimi) ---------- */
+.contact-visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+    background: linear-gradient(160deg, var(--c-primary-dark), var(--c-primary));
+    overflow: hidden;
+}
+
+.contact-visual::before,
+.contact-visual::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: var(--c-accent);
+    opacity: .14;
+}
+
+.contact-visual::before {
+    width: 260px;
+    height: 260px;
+    top: -90px;
+    right: -90px;
+}
+
+.contact-visual::after {
+    width: 200px;
+    height: 200px;
+    bottom: -70px;
+    left: -70px;
+}
+
+.contact-visual svg {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+}
+
+.visual-caption {
+    position: relative;
+    z-index: 1;
+    margin-top: 18px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--c-soft);
+    text-align: center;
+}
+
+/* ---------- Pjesa djathtas ---------- */
+.contact-content {
+    padding: 44px 48px 48px;
+}
+
+.contact-content h1 {
+    font-size: 34px;
+    line-height: 1.3;
+    color: var(--c-primary);
+}
+
+.contact-content h1::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    margin-top: 12px;
+    background: var(--c-accent);
+    border-radius: 3px;
+}
+
+/* Të dhënat e kontaktit */
+.contact-info {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 26px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    border: 1px solid var(--c-border);
+    border-radius: 12px;
+    color: inherit;
+    text-decoration: none;
+    transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+
+.info-item:hover,
+.info-item:focus-visible {
+    border-color: var(--c-accent);
+    box-shadow: 0 8px 20px rgba(88, 21, 47, .10);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.info-icon {
+    flex: 0 0 44px;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--c-soft);
+    color: var(--c-primary);
+    font-size: 18px;
+    transition: background .2s, color .2s;
+}
+
+.info-item:hover .info-icon {
+    background: var(--c-primary);
+    color: #fff;
+}
+
+.info-label,
+.info-value {
+    display: block;
+}
+
+.info-label {
+    font-size: 12px;
+    color: var(--c-text);
+}
+
+.info-value {
+    margin-top: 2px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #222;
+    overflow-wrap: anywhere;
+}
+
+/* Dy fjalitë */
+.contact-lead {
+    margin: 28px 0 30px;
+    padding-left: 16px;
+    border-left: 4px solid var(--c-accent);
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--c-text);
+}
+
+/* ---------- Forma ---------- */
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.form-group {
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #222;
+}
+
+.optional {
+    font-weight: 500;
+    color: var(--c-text);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--c-border);
+    border-radius: 10px;
+    background: #fff;
+    font-size: 15px;
+    color: #222;
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #aaa;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--c-primary);
+    box-shadow: 0 0 0 4px rgba(104, 35, 47, .12);
+}
+
+.form-group .invalid {
+    border-color: var(--c-error);
+}
+
+.field-error {
+    min-height: 16px;
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: var(--c-error);
+}
+
+.hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* Butoni */
+.contact-submit {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 36px;
+    border: 2px solid var(--c-primary);
+    border-radius: 14px;
+    background: var(--c-primary);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: .5px;
+    cursor: pointer;
+    transition: background .2s, color .2s, transform .2s;
+}
+
+.contact-submit:hover:not(:disabled) {
+    background: transparent;
+    color: var(--c-primary);
+    transform: translateY(-2px);
+}
+
+.contact-submit:focus-visible {
+    outline: 3px solid var(--c-accent);
+    outline-offset: 2px;
+}
+
+.contact-submit:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+/* Mesazhi i statusit */
+#form-status {
+    margin: 14px 0 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+#form-status.success {
+    color: var(--c-success);
+}
+
+#form-status.error {
+    color: var(--c-error);
+}
+
+#form-status a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+    #contact-page {
+        padding: 24px 15px 0;
+    }
+
+    .contact-wrap {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-visual {
+        padding: 28px 20px 20px;
+    }
+
+    .contact-visual svg {
+        max-width: 220px;
+    }
+
+    .contact-content {
+        padding: 30px 22px 34px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-content h1 {
+        font-size: 28px;
+    }
+
+    .contact-info,
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .form-row {
+        gap: 0;
+    }
+
+    .contact-submit {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .info-item,
+    .contact-submit,
+    .info-icon {
+        transition: none;
+    }
+}

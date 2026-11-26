@@ -1,26 +1,201 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sq">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Përplot</title>
+    <title>Kontakti | Përplot</title>
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/contact.css">
 </head>
 
-
 <body>
+
+    <!-- HEADER (ngarkohet nga components/header.html) -->
     <div id="header-placeholder"></div>
+
+    <main id="contact-page">
+        <div class="contact-wrap">
+
+            <!-- MAJTAS: ilustrim lodre/roboti -->
+            <aside class="contact-visual" aria-hidden="true">
+
+                <svg viewBox="0 0 400 430" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <!-- Antena -->
+                    <line x1="200" y1="46" x2="200" y2="82" stroke="#e5d5d8" stroke-width="6" stroke-linecap="round"/>
+                    <circle cx="200" cy="38" r="11" fill="#da7d3f"/>
+
+                    <!-- Balonë fjalimi -->
+                    <rect x="248" y="14" width="140" height="46" rx="16" fill="#da7d3f"/>
+                    <path d="M268 60 L282 60 L270 78 Z" fill="#da7d3f"/>
+                    <text x="318" y="43" text-anchor="middle" font-size="15" font-weight="700" fill="#ffffff" font-family="Spartan, sans-serif">Përshëndetje!</text>
+
+                    <!-- Koka -->
+                    <rect x="118" y="84" width="164" height="112" rx="28" fill="#f5e9eb"/>
+                    <rect x="98" y="120" width="20" height="42" rx="9" fill="#da7d3f"/>
+                    <rect x="282" y="120" width="20" height="42" rx="9" fill="#da7d3f"/>
+
+                    <!-- Sytë -->
+                    <circle cx="165" cy="138" r="18" fill="#68232F"/>
+                    <circle cx="235" cy="138" r="18" fill="#68232F"/>
+                    <circle cx="171" cy="132" r="5" fill="#ffffff"/>
+                    <circle cx="241" cy="132" r="5" fill="#ffffff"/>
+
+                    <!-- Buzëqeshja -->
+                    <path d="M170 168 Q200 188 230 168" fill="none" stroke="#68232F" stroke-width="6" stroke-linecap="round"/>
+
+                    <!-- Qafa -->
+                    <rect x="185" y="196" width="30" height="16" fill="#e5d5d8"/>
+
+                    <!-- Trupi -->
+                    <rect x="108" y="212" width="184" height="150" rx="30" fill="#f5e9eb"/>
+                    <rect x="144" y="238" width="112" height="74" rx="14" fill="#68232F"/>
+                    <circle cx="176" cy="275" r="9" fill="#da7d3f"/>
+                    <circle cx="200" cy="275" r="9" fill="#f5e9eb"/>
+                    <circle cx="224" cy="275" r="9" fill="#da7d3f"/>
+                    <rect x="160" y="330" width="80" height="10" rx="5" fill="#e5d5d8"/>
+
+                    <!-- Krahët -->
+                    <rect x="68" y="228" width="28" height="104" rx="14" fill="#e5d5d8"/>
+                    <rect x="304" y="228" width="28" height="104" rx="14" fill="#e5d5d8"/>
+                    <circle cx="82" cy="342" r="17" fill="#da7d3f"/>
+                    <circle cx="318" cy="342" r="17" fill="#da7d3f"/>
+
+                    <!-- Këmbët -->
+                    <rect x="142" y="362" width="36" height="30" rx="10" fill="#e5d5d8"/>
+                    <rect x="222" y="362" width="36" height="30" rx="10" fill="#e5d5d8"/>
+                    <rect x="128" y="386" width="60" height="22" rx="11" fill="#da7d3f"/>
+                    <rect x="212" y="386" width="60" height="22" rx="11" fill="#da7d3f"/>
+
+                    <!-- Hije -->
+                    <ellipse cx="200" cy="418" rx="118" ry="8" fill="rgba(0,0,0,0.22)"/>
+
+                    <!-- Yje dekorative -->
+                    <circle cx="48" cy="90" r="6" fill="#da7d3f" opacity=".8"/>
+                    <circle cx="352" cy="200" r="5" fill="#f5e9eb" opacity=".7"/>
+                    <circle cx="40" cy="300" r="4" fill="#f5e9eb" opacity=".6"/>
+                </svg>
+
+                <p class="visual-caption">Jemi këtu për ju, çdo ditë.</p>
+            </aside>
+
+            <!-- DJATHTAS: përmbajtja -->
+            <div class="contact-content">
+
+                <h1>Na kontaktoni</h1>
+
+                <!-- 1. TË DHËNAT E KONTAKTIT -->
+                <ul class="contact-info">
+                    <li>
+                        <a class="info-item" href="tel:+355691234567">
+                            <span class="info-icon"><i class="fas fa-phone-alt"></i></span>
+                            <span>
+                                <span class="info-label">Telefon</span>
+                                <span class="info-value">+355 68 416 9019</span>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="info-item" href="mailto:info@perplot.al">
+                            <span class="info-icon"><i class="fas fa-envelope"></i></span>
+                            <span>
+                                <span class="info-label">Email</span>
+                                <span class="info-value">info@perplot.al</span>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="info-item" href="https://wa.me/355691234567" target="_blank" rel="noopener">
+                            <span class="info-icon"><i class="fab fa-whatsapp"></i></span>
+                            <span>
+                                <span class="info-label">WhatsApp</span>
+                                <span class="info-value">+355 68 416 9019</span>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="info-item" href="https://www.instagram.com/perplot_magic/" target="_blank" rel="noopener">
+                            <span class="info-icon"><i class="fab fa-instagram"></i></span>
+                            <span>
+                                <span class="info-label">Instagram</span>
+                                <span class="info-value">perplot_magic</span>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- 2. DY FJALI -->
+                <p class="contact-lead">
+                    Çdo kërkesë dhe mesazh nga klientët tanë është i rëndësishëm për ne, sepse mendimet tuaja na ndihmojnë të ofrojmë produkte dhe shërbim më të mirë.
+                    Synojmë t'ju përgjigjemi sa më shpejt, zakonisht brenda 24 orëve.
+                </p>
+
+                <!-- 3. FORMA -->
+                <form id="contact-form" novalidate>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-first-name">Emri</label>
+                            <input type="text" id="contact-first-name" name="first_name" autocomplete="given-name" placeholder="Emri juaj" aria-describedby="err-first-name">
+                            <p class="field-error" id="err-first-name"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-last-name">Mbiemri</label>
+                            <input type="text" id="contact-last-name" name="last_name" autocomplete="family-name" placeholder="Mbiemri juaj" aria-describedby="err-last-name">
+                            <p class="field-error" id="err-last-name"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contact-email">Adresa e emailit</label>
+                            <input type="email" id="contact-email" name="email" autocomplete="email" placeholder="emri@shembull.com" aria-describedby="err-email">
+                            <p class="field-error" id="err-email"></p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contact-phone">Nr. telefoni <span class="optional">(opsionale)</span></label>
+                            <input type="tel" id="contact-phone" name="phone" autocomplete="tel" placeholder="+355 69 123 4567" aria-describedby="err-phone">
+                            <p class="field-error" id="err-phone"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contact-message">Mesazhi</label>
+                        <textarea id="contact-message" name="message" rows="5" placeholder="Shkruani mesazhin tuaj këtu..." aria-describedby="err-message"></textarea>
+                        <p class="field-error" id="err-message"></p>
+                    </div>
+
+                    <!-- Honeypot kundër spam-it (mos e fshi) -->
+                    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+                    <button type="submit" class="contact-submit" id="contact-submit">
+                        <i class="fas fa-paper-plane"></i> Dërgo
+                    </button>
+
+                    <p id="form-status" role="status" aria-live="polite"></p>
+                </form>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER (ngarkohet nga components/footer.html) -->
     <div id="footer-placeholder"></div>
 
     <script src="script.js"></script>
     <script src="load-layout.js"></script>
     <script src="search.js"></script>
-
-
+    <script src="contact.js"></script>
 
 </body>
+
+</html>

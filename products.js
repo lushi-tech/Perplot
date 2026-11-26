@@ -5,16 +5,16 @@
 // price = çmimi i vjetër, salePrice = çmimi me ulje, stock = sasia në stok
 
 const dealProducts = [
-    { id: 1,  name: "Set blloqesh ndërtimi 500 copë",   category: "Lojra",       price: 2800, salePrice: 2100, stock: 14, img: "images/prove/feature1.jpg" },
+    { id: 1,  name: "Set blloqesh ndërtimi 500 copë",   category: "Lojra",       price: 2800, salePrice: 2100, stock: 14, img: "images/prove/feature1.avif" },
     { id: 2,  name: "Enigmë me 1000 pjesë",             category: "Lojra",       price: 1500, salePrice: 1100, stock: 20, img: "images/prove/feature1.avif" },
     { id: 3,  name: "Set kancelarie për shkollë",       category: "Kancelarike", price: 1200, salePrice: 850,  stock: 35, img: "images/prove/feature1.avif" },
-    { id: 4,  name: "Çantë shkolle me rrota",           category: "Kancelarike", price: 4500, salePrice: 3600, stock: 8,  img: "images/prove/feature1.jpg" },
+    { id: 4,  name: "Çantë shkolle me rrota",           category: "Kancelarike", price: 4500, salePrice: 3600, stock: 8,  img: "images/prove/feature1.avif" },
     { id: 5,  name: "Tabletë edukative për fëmijë",     category: "Elektronike", price: 9900, salePrice: 7900, stock: 6,  img: "images/prove/feature1.avif" },
     { id: 6,  name: "Kufje pa tela për fëmijë",         category: "Elektronike", price: 3200, salePrice: 2400, stock: 12, img: "images/prove/feature1.avif" },
-    { id: 7,  name: "Libër me përralla të ilustruara",  category: "Libra",       price: 900,  salePrice: 650,  stock: 40, img: "images/prove/feature1.jpg" },
+    { id: 7,  name: "Libër me përralla të ilustruara",  category: "Libra",       price: 900,  salePrice: 650,  stock: 40, img: "images/prove/feature1.avif" },
     { id: 8,  name: "Libër për ngjyrosje + 24 laps",    category: "Libra",       price: 700,  salePrice: 500,  stock: 50, img: "images/prove/feature1.avif" },
     { id: 9,  name: "Set dekorimesh festive",           category: "Festive",     price: 2000, salePrice: 1400, stock: 18, img: "images/prove/feature1.avif" },
-    { id: 10, name: "Kalendar Advent me surpriza",      category: "Festive",     price: 3500, salePrice: 2700, stock: 5,  img: "images/prove/feature1.jpg" },
+    { id: 10, name: "Kalendar Advent me surpriza",      category: "Festive",     price: 3500, salePrice: 2700, stock: 5,  img: "images/prove/feature1.avif" },
 ];
 
 const CART_KEY = "perplotCart";
@@ -39,33 +39,33 @@ document.addEventListener("DOMContentLoaded", function () {
         const lowStock = p.stock <= 8;
 
         return `
-        <article class="product-card" data-id="${p.id}" data-stock="${p.stock}">
-            <div class="product-media">
+        <article class="deal-card" data-id="${p.id}" data-stock="${p.stock}">
+            <div class="deal-media">
                 <img src="${p.img}" alt="${p.name}" loading="lazy">
                 <span class="discount-badge">-${discount}%</span>
             </div>
 
-            <div class="product-info">
-                <p class="product-category">${p.category}</p>
-                <h3 class="product-name">${p.name}</h3>
+            <div class="deal-info">
+                <p class="deal-category">${p.category}</p>
+                <h3 class="deal-name">${p.name}</h3>
 
-                <div class="product-price">
+                <div class="deal-price">
                     <span class="price-new">${formatPrice(p.salePrice)}</span>
                     <span class="price-old">${formatPrice(p.price)}</span>
                 </div>
 
-                <p class="product-stock ${lowStock ? "low" : ""}">
+                <p class="deal-stock ${lowStock ? "low" : ""}">
                     ${lowStock ? "Vetëm " + p.stock + " copë në stok" : "Në stok: " + p.stock + " copë"}
                 </p>
 
-                <div class="product-actions">
+                <div class="deal-actions">
                     <div class="qty-control">
                         <button type="button" data-action="minus" aria-label="Zvogëlo sasinë">&minus;</button>
                         <span class="qty-value" aria-live="polite">1</span>
                         <button type="button" data-action="plus" aria-label="Rrit sasinë">+</button>
                     </div>
 
-                    <button type="button" class="add-to-cart" data-action="add">
+                    <button type="button" class="deal-add-to-cart" data-action="add">
                         <i class="fas fa-shopping-cart"></i> Shto në shportë
                     </button>
                 </div>
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const button = event.target.closest("button[data-action]");
         if (!button) return;
 
-        const card = button.closest(".product-card");
+        const card = button.closest(".deal-card");
         const qtyEl = card.querySelector(".qty-value");
         const stock = Number(card.dataset.stock);
         let qty = Number(qtyEl.textContent);
@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function scrollCarousel(direction) {
-        const card = grid.querySelector(".product-card");
+        const card = grid.querySelector(".deal-card");
         if (!card) return;
 
         const gap = parseFloat(getComputedStyle(grid).columnGap) || 0;

@@ -1,0 +1,303 @@
+
+/* ==========================================
+   ABOUT PAGE - PERPLOT
+========================================== */
+
+.about-page {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* About Hero */
+
+.about-hero {
+    min-height: 360px;
+    padding: 90px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(
+        135deg,
+        #f8e8e9,
+        #fdf4e8
+    );
+}
+
+.about-hero-content {
+    max-width: 800px;
+}
+
+.about-label {
+    display: inline-block;
+    color: #68232f;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.about-hero h1 {
+    color: #68232f;
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+.about-hero p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* Mission and Vision */
+
+.about-purpose {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding: 80px 8%;
+    background: #fff;
+}
+
+.purpose-card {
+    padding: 40px 35px;
+    background: #fff8f5;
+    border-radius: 15px;
+    border: 1px solid #f0e1dc;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.purpose-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.purpose-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #68232f;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 23px;
+    margin-bottom: 22px;
+}
+
+.purpose-card h2 {
+    color: #68232f;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.purpose-card p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* Store Section */
+
+.store-section {
+    padding: 75px 8%;
+    background: #faf7f5;
+}
+
+.store-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 50px;
+}
+
+.store-heading h2 {
+    color: #68232f;
+    font-size: clamp(28px, 4vw, 38px);
+    margin-bottom: 15px;
+}
+
+.store-heading p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* Store Cards */
+
+.store-container {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+.store-card {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+.store-info {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.store-number {
+    color: #c9a0a3;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.store-info h3 {
+    color: #68232f;
+    font-size: 23px;
+    margin-bottom: 22px;
+}
+
+.store-info p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.store-info p i {
+    color: #68232f;
+    width: 22px;
+    margin-right: 5px;
+}
+
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    margin-top: 12px;
+    color: #68232f;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.map-link:hover {
+    color: #a34a5a;
+    gap: 15px;
+}
+
+.store-map {
+    min-height: 300px;
+}
+
+.store-map iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+/* Tablets */
+
+@media screen and (max-width: 992px) {
+
+    .about-hero {
+        padding: 75px 6%;
+    }
+
+    .about-purpose {
+        padding: 60px 5%;
+        gap: 20px;
+    }
+
+    .purpose-card {
+        padding: 30px 25px;
+    }
+
+    .store-section {
+        padding: 60px 5%;
+    }
+
+    .store-card {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .store-info {
+        padding: 25px;
+    }
+}
+
+/* Smartphones */
+
+@media screen and (max-width: 600px) {
+
+    .about-hero {
+        min-height: 320px;
+        padding: 65px 7%;
+    }
+
+    .about-hero p {
+        font-size: 15px;
+    }
+
+    .about-purpose {
+        grid-template-columns: 1fr;
+        padding: 45px 6%;
+        gap: 20px;
+    }
+
+    .purpose-card {
+        padding: 28px 23px;
+    }
+
+    .purpose-card h2 {
+        font-size: 21px;
+    }
+
+    .purpose-card p {
+        font-size: 14px;
+    }
+
+    .store-section {
+        padding: 50px 6%;
+    }
+
+    .store-heading {
+        margin-bottom: 30px;
+    }
+
+    .store-heading p {
+        font-size: 14px;
+    }
+
+    .store-card {
+        grid-template-columns: 1fr;
+    }
+
+    .store-info {
+        padding: 28px 23px;
+    }
+
+    .store-info h3 {
+        font-size: 21px;
+    }
+
+    .store-map,
+    .store-map iframe {
+        min-height: 250px;
+        height: 250px;
+    }
+}
